@@ -1,17 +1,15 @@
  <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ons El Yahmadi - Portfolio MLOps & Full-Stack Engineer ultra-moderne" />
+  <meta name="description" content="Ons El Yahmadi - Modern MLOps & Full-Stack Engineer Portfolio" />
   <title>Ons El Yahmadi | MLOps & Full-Stack Engineer</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-
   <style>
     :root {
       --bg-1: #07111f;
@@ -28,7 +26,6 @@
       --glass-border: rgba(255, 255, 255, 0.14);
       --shadow: 0 24px 80px rgba(8, 15, 40, 0.45);
     }
-
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
@@ -41,9 +38,7 @@
         linear-gradient(180deg, var(--bg-1), var(--bg-2) 45%, #08101d 100%);
       overflow-x: hidden;
     }
-
     .heading-font { font-family: 'Space Grotesk', sans-serif; }
-
     .glass {
       background: var(--glass);
       backdrop-filter: blur(18px);
@@ -51,22 +46,18 @@
       border: 1px solid var(--glass-border);
       box-shadow: var(--shadow);
     }
-
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 0%, #dbeafe 30%, #c4b5fd 65%, #93c5fd 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-
     .accent-gradient {
       background: linear-gradient(135deg, var(--violet) 0%, var(--blue) 100%);
     }
-
     .accent-gradient-soft {
       background: linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(59, 130, 246, 0.18));
     }
-
     .nav-link {
       position: relative;
       color: #e8eefc;
@@ -85,7 +76,6 @@
     }
     .nav-link:hover { color: #fff; }
     .nav-link:hover::after { width: 100%; }
-
     .hero-orb {
       position: absolute;
       border-radius: 9999px;
@@ -101,7 +91,6 @@
       0%, 100% { transform: translateY(0) translateX(0) scale(1); }
       50% { transform: translateY(22px) translateX(-10px) scale(1.08); }
     }
-
     #hero-canvas {
       position: absolute;
       inset: 0;
@@ -111,7 +100,6 @@
       pointer-events: none;
       z-index: 0;
     }
-
     .section-title {
       position: relative;
       display: inline-block;
@@ -127,7 +115,6 @@
       background: linear-gradient(90deg, var(--violet), var(--blue));
       box-shadow: 0 0 24px rgba(139, 92, 246, 0.55);
     }
-
     .card {
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
       border: 1px solid rgba(255,255,255,0.10);
@@ -143,7 +130,6 @@
       border-color: rgba(167, 139, 250, 0.40);
       box-shadow: 0 28px 80px rgba(58, 83, 161, 0.35);
     }
-
     .shine {
       position: relative;
       overflow: hidden;
@@ -157,11 +143,9 @@
       transition: transform 0.8s ease;
     }
     .shine:hover::before { transform: translateX(120%) skewX(-18deg); }
-
     .glow-text {
       text-shadow: 0 0 22px rgba(139, 92, 246, 0.38), 0 0 36px rgba(59, 130, 246, 0.22);
     }
-
     .typing {
       overflow: hidden;
       white-space: nowrap;
@@ -173,7 +157,6 @@
       to { width: 100%; }
     }
     @keyframes blink { 50% { border-color: transparent; } }
-
     .scroll-animate {
       opacity: 0;
       transform: translateY(28px);
@@ -183,7 +166,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
     .skill-bar {
       height: 10px;
       border-radius: 999px;
@@ -196,7 +178,6 @@
       background: linear-gradient(90deg, var(--violet), var(--blue));
       box-shadow: 0 0 20px rgba(139, 92, 246, 0.28);
     }
-
     .project-filter {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.10);
@@ -210,7 +191,6 @@
       color: white;
       box-shadow: 0 12px 30px rgba(67, 86, 177, 0.25);
     }
-
     .project-card {
       position: relative;
       overflow: hidden;
@@ -227,7 +207,6 @@
       transition: opacity 0.35s ease;
     }
     .project-card:hover .overlay { opacity: 1; }
-
     .top-gradient-line {
       height: 3px;
       background: linear-gradient(90deg, var(--violet), var(--blue), #ffffff);
@@ -238,18 +217,15 @@
       0% { background-position: 0% 50%; }
       100% { background-position: 200% 50%; }
     }
-
     .profile-ring {
       background: linear-gradient(135deg, rgba(139,92,246,1), rgba(59,130,246,1));
       padding: 5px;
       border-radius: 2.2rem;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 24px 70px rgba(59, 130, 246, 0.35);
     }
-
     .floating-badge {
       animation: floatOrb 5.5s ease-in-out infinite;
     }
-
     ::selection {
       background: rgba(139, 92, 246, 0.35);
       color: white;
@@ -264,34 +240,31 @@
         <div class="flex h-11 w-11 items-center justify-center rounded-2xl accent-gradient text-white font-bold shadow-lg shadow-violet-500/30">O</div>
         <div>
           <h1 class="heading-font text-2xl md:text-3xl font-semibold tracking-tight text-white">Ons El Yahmadi</h1>
-          <p class="text-xs text-slate-300">MLOps • Full-Stack • IA</p>
+          <p class="text-xs text-slate-300">MLOps • Full-Stack • AI</p>
         </div>
       </div>
-
       <div class="hidden items-center gap-8 text-[15px] font-medium md:flex">
-        <a href="#about" class="nav-link">À propos</a>
-        <a href="#experience" class="nav-link">Expérience</a>
-        <a href="#skills" class="nav-link">Compétences</a>
-        <a href="#projects" class="nav-link">Projets</a>
-        <a href="#education" class="nav-link">Formation</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
-
       <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden rounded-2xl px-5 py-3 text-sm font-semibold text-white accent-gradient shadow-lg shadow-violet-500/25 md:inline-flex">Me contacter</a>
+        <a href="#contact" class="hidden rounded-2xl px-5 py-3 text-sm font-semibold text-white accent-gradient shadow-lg shadow-violet-500/25 md:inline-flex">Get in touch</a>
         <button id="mobile-btn" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl glass text-white md:hidden">
           <i class="fas fa-bars text-lg"></i>
         </button>
       </div>
     </div>
-
     <div id="mobile-menu" class="hidden border-t border-white/10 bg-slate-950/95 px-6 py-5 md:hidden">
       <div class="flex flex-col gap-4 text-base font-medium">
-        <a href="#about" class="nav-link" onclick="toggleMobileMenu()">À propos</a>
-        <a href="#experience" class="nav-link" onclick="toggleMobileMenu()">Expérience</a>
-        <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Compétences</a>
-        <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projets</a>
-        <a href="#education" class="nav-link" onclick="toggleMobileMenu()">Formation</a>
+        <a href="#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+        <a href="#experience" class="nav-link" onclick="toggleMobileMenu()">Experience</a>
+        <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Skills</a>
+        <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projects</a>
+        <a href="#education" class="nav-link" onclick="toggleMobileMenu()">Education</a>
         <a href="#contact" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
       </div>
     </div>
@@ -303,7 +276,6 @@
     <div class="hero-orb orb-1"></div>
     <div class="hero-orb orb-2"></div>
     <div class="hero-orb orb-3"></div>
-
     <div class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-12 md:px-8">
       <div class="md:col-span-7">
         <div class="glass mb-8 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm text-slate-100">
@@ -311,31 +283,26 @@
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
             <span class="relative inline-flex h-3 w-3 rounded-full bg-violet-400"></span>
           </span>
-          Disponible • Tunis, Tunisie
+          Available • Tunis, Tunisia
         </div>
-
         <h1 class="heading-font glow-text max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl">
           Ons El Yahmadi
         </h1>
-
         <p id="role" class="typing mt-6 max-w-xl text-2xl font-semibold text-transparent bg-gradient-to-r from-violet-300 via-white to-blue-300 bg-clip-text md:text-4xl">
           MLOps &amp; Full-Stack Engineer
         </p>
-
         <p class="mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-2xl">
-          Je transforme des modèles d’IA en solutions production-ready, avec une approche moderne, fiable et élégante.
-          <span class="text-white">Design, performance et impact réel.</span>
+          I turn AI models into production-ready solutions with a modern, reliable, and elegant approach.
+          <span class="text-white">Design, performance, and real impact.</span>
         </p>
-
         <div class="mt-10 flex flex-wrap gap-4">
           <a href="#projects" class="shine inline-flex items-center gap-3 rounded-2xl px-7 py-4 text-base font-semibold text-white accent-gradient shadow-lg shadow-violet-500/25 transition-transform hover:scale-[1.02] md:px-9 md:py-5 md:text-lg">
-            Découvrir mes projets <i class="fas fa-arrow-right"></i>
+            View my projects <i class="fas fa-arrow-right"></i>
           </a>
           <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank" class="inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10 md:px-9 md:py-5 md:text-lg">
             <i class="fab fa-linkedin text-xl"></i> LinkedIn
           </a>
         </div>
-
         <div class="mt-12 grid gap-4 text-sm text-slate-200 sm:grid-cols-3">
           <div class="glass rounded-2xl px-4 py-4">
             <div class="flex items-center gap-3"><i class="fas fa-phone text-blue-300"></i><span>+216 58 217 800</span></div>
@@ -344,11 +311,10 @@
             <div class="flex items-center gap-3"><i class="fas fa-envelope text-violet-300"></i><span>ons.elyahmadi@fsb.ucar.tn</span></div>
           </div>
           <div class="glass rounded-2xl px-4 py-4">
-            <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-blue-300"></i><span>Tunis, Tunisie 🇹🇳</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-blue-300"></i><span>Tunis, Tunisia</span></div>
           </div>
         </div>
       </div>
-
       <div class="md:col-span-5 flex justify-center">
         <div class="relative w-full max-w-md">
           <div class="profile-ring">
@@ -356,13 +322,12 @@
               <img src="f2b3f8bb-77b6-4298-8c3d-aefd084a6ade.jpg" alt="Ons El Yahmadi" class="h-[420px] w-full object-cover md:h-[520px]" />
             </div>
           </div>
-
           <div class="floating-badge glass absolute -bottom-7 -right-2 rounded-2xl px-5 py-4 md:-right-6">
             <div class="flex items-center gap-4">
               <div class="flex h-12 w-12 items-center justify-center rounded-xl accent-gradient text-xl">⚡</div>
               <div>
-                <p class="text-xs uppercase tracking-[0.24em] text-slate-300">Profil</p>
-                <p class="font-semibold text-white">IA • Code • Design</p>
+                <p class="text-xs uppercase tracking-[0.24em] text-slate-300">Profile</p>
+                <p class="font-semibold text-white">AI • Code </p>
               </div>
             </div>
           </div>
@@ -376,28 +341,27 @@
     <div class="mx-auto max-w-7xl px-6 md:px-8">
       <div class="grid items-center gap-12 md:grid-cols-2 md:gap-20">
         <div class="scroll-animate">
-          <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-semibold text-violet-200">QUI SUIS-JE</span>
-          <h2 class="section-title heading-font mt-6 max-w-xl text-4xl font-bold tracking-tight text-white md:text-6xl">Software Engineer &amp; MLOps qui rend l’IA belle, scalable et production-ready</h2>
+          <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-semibold text-violet-200">WHO AM I</span>
+          <h2 class="section-title heading-font mt-6 max-w-xl text-4xl font-bold tracking-tight text-white md:text-6xl">Software Engineer &amp; MLOps Engineer who makes AI beautiful, scalable and production-ready</h2>
           <p class="mt-10 text-lg leading-8 text-slate-300 md:text-2xl">
-            Je conçois des pipelines CI/CD, des applications web et mobiles modernes, ainsi que des modèles d’IA capables de passer du notebook à la production avec précision, stabilité et élégance.
+            I design CI/CD pipelines, modern web and mobile applications, as well as AI models that can go from notebook to production with precision, stability, and elegance.
           </p>
-          <p class="mt-6 text-base leading-7 text-slate-400 md:text-xl">Calme dans l’exécution • Passionnée par l’innovation • Toujours prête à créer des solutions qui impactent.</p>
+          <p class="mt-6 text-base leading-7 text-slate-400 md:text-xl">Calm in execution • Passionate about innovation • Always ready to create solutions that make an impact.</p>
         </div>
-
         <div class="grid gap-5 sm:grid-cols-2">
           <div class="card card-hover rounded-3xl p-7">
             <i class="fas fa-rocket text-5xl text-violet-300"></i>
             <h4 class="mt-5 text-xl font-semibold text-white">MLOps &amp; Production</h4>
-            <p class="mt-2 text-sm text-slate-300">CI/CD • Docker • Jenkins • Monitoring LLM</p>
+            <p class="mt-2 text-sm text-slate-300">CI/CD • Docker • Jenkins • LLM Monitoring</p>
           </div>
           <div class="card card-hover rounded-3xl p-7">
             <i class="fas fa-brain text-5xl text-blue-300"></i>
             <h4 class="mt-5 text-xl font-semibold text-white">Machine Learning</h4>
-            <p class="mt-2 text-sm text-slate-300">CV • NLP • Time Series • Fraud Detection</p>
+            <p class="mt-2 text-sm text-slate-300">Computer Vision • NLP • Time Series • Fraud Detection</p>
           </div>
           <div class="card card-hover rounded-3xl p-7">
             <i class="fas fa-laptop-code text-5xl text-violet-200"></i>
-            <h4 class="mt-5 text-xl font-semibold text-white">Full-Stack Moderne</h4>
+            <h4 class="mt-5 text-xl font-semibold text-white">Modern Full-Stack</h4>
             <p class="mt-2 text-sm text-slate-300">Next.js • NestJS • MERN • Ionic • Spring Boot</p>
           </div>
           <div class="card card-hover rounded-3xl p-7">
@@ -413,20 +377,19 @@
   <!-- EXPERIENCE -->
   <section id="experience" class="py-24 md:py-32 bg-white/3">
     <div class="mx-auto max-w-7xl px-6 md:px-8">
-      <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Expériences professionnelles</h2>
-
+      <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Professional Experience</h2>
       <div class="space-y-8 md:space-y-10">
         <div class="scroll-animate grid gap-6 md:grid-cols-12">
           <div class="md:col-span-3">
-            <div class="inline-flex rounded-full accent-gradient px-5 py-2 text-sm font-semibold text-white">Jan – Juin 2025</div>
+            <div class="inline-flex rounded-full accent-gradient px-5 py-2 text-sm font-semibold text-white">Jan – Jun 2025</div>
             <h3 class="mt-4 text-2xl font-semibold text-white">MLOps Intern</h3>
             <p class="mt-1 text-lg text-violet-200">EduZEN • Tunis</p>
           </div>
           <div class="md:col-span-9 card card-hover rounded-3xl p-7 md:p-9">
             <ul class="space-y-5 text-base leading-8 text-slate-200 md:text-xl">
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Développement de features IA pour gestion du stress et scheduling (NestJS + Next.js + MySQL)</li>
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Pipeline MLOps complet avec Google Colab pour entraînement ML &amp; LLM</li>
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>CI/CD automatisé avec Jenkins et Docker</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Developed AI features for stress management and scheduling (NestJS + Next.js + MySQL)</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Complete MLOps pipeline using Google Colab for ML &amp; LLM training</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Automated CI/CD with Jenkins and Docker</li>
             </ul>
           </div>
         </div>
@@ -439,36 +402,36 @@
           </div>
           <div class="md:col-span-9 card card-hover rounded-3xl p-7 md:p-9">
             <ul class="space-y-5 text-base leading-8 text-slate-200 md:text-xl">
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Application mobile Safe Life (Ionic + MongoDB) – localisation d’équipements d’urgence en temps réel</li>
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Documentation &amp; tests REST API avec Swagger</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Safe Life mobile application (Ionic + MongoDB) – real-time emergency equipment location</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>REST API documentation &amp; testing with Swagger</li>
             </ul>
           </div>
         </div>
 
         <div class="scroll-animate grid gap-6 md:grid-cols-12">
           <div class="md:col-span-3">
-            <div class="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white">Fév – Oct 2024</div>
+            <div class="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white">Feb – Oct 2024</div>
             <h3 class="mt-4 text-2xl font-semibold text-white">Data Scientist Intern</h3>
             <p class="mt-1 text-lg text-violet-200">Coficab Group • Tunis</p>
           </div>
           <div class="md:col-span-9 card card-hover rounded-3xl p-7 md:p-9">
             <ul class="space-y-5 text-base leading-8 text-slate-200 md:text-xl">
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Automatisation de pipelines data (Python + SSIS) et applications web Angular + Flask</li>
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Modèles Time Series (ARIMA, ARCH) – 85% accuracy + Power BI dashboards avec ETL</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Automated data pipelines (Python + SSIS) and web applications (Angular + Flask)</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-blue-300"></i>Time Series models (ARIMA, ARCH) – 85% accuracy + Power BI dashboards with ETL</li>
             </ul>
           </div>
         </div>
 
         <div class="scroll-animate grid gap-6 md:grid-cols-12">
           <div class="md:col-span-3">
-            <div class="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white">Fév – Juin 2022</div>
+            <div class="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white">Feb – Jun 2022</div>
             <h3 class="mt-4 text-2xl font-semibold text-white">Full-Stack Developer Intern</h3>
             <p class="mt-1 text-lg text-blue-200">CNI • Tunis</p>
           </div>
           <div class="md:col-span-9 card card-hover rounded-3xl p-7 md:p-9">
             <ul class="space-y-5 text-base leading-8 text-slate-200 md:text-xl">
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Application de gestion fiscale municipale (Spring Boot + Angular + PostgreSQL)</li>
-              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Intégration Google Maps &amp; PayPal</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Municipal tax management application (Spring Boot + Angular + PostgreSQL)</li>
+              <li class="flex gap-4"><i class="fas fa-circle-check mt-1 text-violet-300"></i>Google Maps &amp; PayPal integration</li>
             </ul>
           </div>
         </div>
@@ -479,12 +442,11 @@
   <!-- SKILLS -->
   <section id="skills" class="py-24 md:py-32">
     <div class="mx-auto max-w-7xl px-6 md:px-8">
-      <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Compétences &amp; Outils</h2>
-
+      <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Skills &amp; Tools</h2>
       <div class="grid gap-6 lg:grid-cols-3">
         <div class="card card-hover rounded-3xl p-7 md:p-9">
           <h4 class="mb-7 flex items-center gap-3 text-xl font-semibold text-white">
-            <i class="fas fa-code text-violet-300"></i> Programmation
+            <i class="fas fa-code text-violet-300"></i> Programming
           </h4>
           <div class="space-y-7">
             <div>
@@ -505,7 +467,6 @@
             </div>
           </div>
         </div>
-
         <div class="card card-hover rounded-3xl p-7 md:p-9">
           <h4 class="mb-7 flex items-center gap-3 text-xl font-semibold text-white">
             <i class="fas fa-server text-blue-300"></i> MLOps &amp; DevOps
@@ -519,10 +480,9 @@
             <span class="rounded-full bg-white/6 px-4 py-3 text-sm text-slate-100 border border-white/10">SSIS • Linux • Azure</span>
           </div>
         </div>
-
         <div class="card card-hover rounded-3xl p-7 md:p-9">
           <h4 class="mb-7 flex items-center gap-3 text-xl font-semibold text-white">
-            <i class="fas fa-cubes text-violet-300"></i> Frameworks &amp; IA
+            <i class="fas fa-cubes text-violet-300"></i> Frameworks &amp; AI
           </h4>
           <div class="flex flex-wrap gap-3">
             <span class="rounded-full bg-white/6 px-4 py-3 text-sm text-slate-100 border border-white/10">TensorFlow / Keras</span>
@@ -535,25 +495,24 @@
           </div>
         </div>
       </div>
-
       <div class="mt-16 grid gap-8 md:grid-cols-2">
         <div class="card rounded-3xl p-7 md:p-9">
-          <h4 class="mb-8 text-2xl font-semibold text-white">Langues</h4>
+          <h4 class="mb-8 text-2xl font-semibold text-white">Languages</h4>
           <div class="space-y-5 text-base md:text-xl">
-            <div class="flex items-center justify-between"><span>Français</span><span class="text-blue-200 font-semibold">Fluent</span></div>
-            <div class="flex items-center justify-between"><span>Arabe</span><span class="text-violet-200 font-semibold">Natif</span></div>
-            <div class="flex items-center justify-between"><span>Anglais</span><span class="text-blue-200 font-semibold">Advanced</span></div>
-            <div class="flex items-center justify-between"><span>Espagnol</span><span class="text-violet-200 font-semibold">Beginner</span></div>
+            <div class="flex items-center justify-between"><span>French</span><span class="text-blue-200 font-semibold">Fluent</span></div>
+            <div class="flex items-center justify-between"><span>Arabic</span><span class="text-violet-200 font-semibold">Native</span></div>
+            <div class="flex items-center justify-between"><span>English</span><span class="text-blue-200 font-semibold">Advanced</span></div>
+            <div class="flex items-center justify-between"><span>Spanish</span><span class="text-violet-200 font-semibold">Beginner</span></div>
           </div>
         </div>
         <div class="card rounded-3xl p-7 md:p-9">
           <h4 class="mb-8 text-2xl font-semibold text-white">Soft Skills &amp; Passion</h4>
           <div class="flex flex-wrap gap-3">
-            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Pensée analytique</span>
-            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Travail d’équipe</span>
-            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Adaptabilité</span>
-            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Mindset humanitaire</span>
-            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Créativité technique</span>
+            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Analytical Thinking</span>
+            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Teamwork</span>
+            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Adaptability</span>
+            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Humanitarian Mindset</span>
+            <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Technical Creativity</span>
           </div>
         </div>
       </div>
@@ -563,16 +522,14 @@
   <!-- PROJECTS -->
   <section id="projects" class="py-24 md:py-32 bg-white/3">
     <div class="mx-auto max-w-7xl px-6 md:px-8">
-      <h2 class="heading-font section-title mb-12 text-4xl font-bold text-white md:text-6xl">Projets phares</h2>
-
+      <h2 class="heading-font section-title mb-12 text-4xl font-bold text-white md:text-6xl">Featured Projects</h2>
       <div class="mb-10 flex flex-wrap gap-3" id="project-filters">
-        <button onclick="filterProjects(event, 'all')" class="project-filter active rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">Tout</button>
-        <button onclick="filterProjects(event, 'ml')" class="project-filter rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">ML &amp; IA</button>
+        <button onclick="filterProjects(event, 'all')" class="project-filter active rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">All</button>
+        <button onclick="filterProjects(event, 'ml')" class="project-filter rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">ML &amp; AI</button>
         <button onclick="filterProjects(event, 'mlops')" class="project-filter rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">MLOps</button>
         <button onclick="filterProjects(event, 'fullstack')" class="project-filter rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">Full-Stack</button>
         <button onclick="filterProjects(event, 'mobile')" class="project-filter rounded-full px-5 py-3 text-sm font-semibold md:px-6 md:py-3.5">Mobile</button>
       </div>
-
       <div id="projects-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
     </div>
   </section>
@@ -580,51 +537,48 @@
   <!-- EDUCATION -->
   <section id="education" class="py-24 md:py-32">
     <div class="mx-auto max-w-7xl px-6 md:px-8">
-      <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Formation</h2>
-
+      <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Education</h2>
       <div class="space-y-6 md:space-y-8">
         <div class="scroll-animate card card-hover rounded-3xl p-7 md:p-10">
           <div class="flex flex-col gap-6 md:flex-row md:justify-between">
             <div class="md:max-w-xs">
               <span class="text-sm font-semibold uppercase tracking-[0.2em] text-violet-200">2023 — 2025</span>
-              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Ingénierie Logicielle</h3>
+              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Software Engineering</h3>
               <p class="text-slate-300">TEK-UP University</p>
             </div>
             <div class="flex-1 text-base leading-8 text-slate-200 md:text-xl">
-              • Système de réservation complet MERN<br>
-              • Application de gestion de consultation (Spring Boot + Angular)<br>
-              • Modèle classification maladies de la pomme de terre (TensorFlow/Keras – 90% accuracy)<br>
-              • Modèle de scoring crédit
+              • Complete MERN reservation system<br>
+              • Medical consultation management application (Spring Boot + Angular)<br>
+              • Potato disease classification model (TensorFlow/Keras – 90% accuracy)<br>
+              • Credit scoring model
             </div>
           </div>
         </div>
-
         <div class="scroll-animate card card-hover rounded-3xl p-7 md:p-10">
           <div class="flex flex-col gap-6 md:flex-row md:justify-between">
             <div class="md:max-w-xs">
               <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">2022 — 2024</span>
-              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Master Professionnel Data Science</h3>
-              <p class="text-slate-300">Faculté des Sciences de Bizerte</p>
+              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Professional Master in Data Science</h3>
+              <p class="text-slate-300">Faculty of Sciences of Bizerte</p>
             </div>
             <div class="flex-1 text-base leading-8 text-slate-200 md:text-xl">
-              • Détection fraude cartes bancaires (scikit-learn – 95% accuracy) déployé Django full-stack<br>
-              • Tableau de bord interactif business intelligence (Flask + Angular)<br>
-              • Screening CV automatique via NLP (NLTK + TF-IDF)<br>
-              • Modèles Time Series (ARIMA, ARCH)
+              • Credit card fraud detection (scikit-learn – 95% accuracy) deployed as full-stack Django app<br>
+              • Interactive business intelligence dashboard (Flask + Angular)<br>
+              • Automatic CV screening using NLP (NLTK + TF-IDF)<br>
+              • Time Series models (ARIMA, ARCH)
             </div>
           </div>
         </div>
-
         <div class="scroll-animate card card-hover rounded-3xl p-7 md:p-10">
           <div class="flex flex-col gap-6 md:flex-row md:justify-between">
             <div class="md:max-w-xs">
               <span class="text-sm font-semibold uppercase tracking-[0.2em] text-violet-200">2019 — 2022</span>
-              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Bachelor Software Engineering &amp; Information Systems</h3>
-              <p class="text-slate-300">Faculté des Sciences de Bizerte</p>
+              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Bachelor in Software Engineering &amp; Information Systems</h3>
+              <p class="text-slate-300">Faculty of Sciences of Bizerte</p>
             </div>
             <div class="flex-1 text-base leading-8 text-slate-200 md:text-xl">
-              • Système de gestion de bibliothèque (.NET Core + GitLab CI/CD)<br>
-              • Dashboard Excel d’analyse des tendances marché
+              • Library management system (.NET Core + GitLab CI/CD)<br>
+              • Excel dashboard for market trend analysis
             </div>
           </div>
         </div>
@@ -635,18 +589,17 @@
   <!-- CONTACT -->
   <section id="contact" class="py-24 md:py-32 bg-white/3">
     <div class="mx-auto max-w-5xl px-6 text-center md:px-8">
-      <h2 class="heading-font text-4xl font-bold text-white md:text-6xl">Prêt à créer quelque chose d’exceptionnel ?</h2>
-      <p class="mt-5 text-lg text-slate-300 md:text-3xl">MLOps • Full-Stack • IA • Data Science</p>
-
+      <h2 class="heading-font text-4xl font-bold text-white md:text-6xl">Ready to build something exceptional?</h2>
+      <p class="mt-5 text-lg text-slate-300 md:text-3xl">MLOps • Full-Stack • AI • Data Science</p>
       <div class="mt-14 grid gap-5 md:grid-cols-2">
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ons.elyahmadi@fsb.ucar.tn" target="_blank" class="card card-hover shine rounded-3xl p-8 text-left">
           <i class="fas fa-envelope text-4xl text-violet-200 md:text-5xl"></i>
-          <p class="mt-6 text-2xl font-semibold text-white">M’envoyer un mail via Gmail</p>
+          <p class="mt-6 text-2xl font-semibold text-white">Send me an email via Gmail</p>
           <p class="mt-2 text-sm md:text-lg text-blue-200">ons.elyahmadi@fsb.ucar.tn</p>
         </a>
         <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank" class="card card-hover shine rounded-3xl p-8 text-left">
           <i class="fab fa-linkedin text-4xl text-blue-200 md:text-5xl"></i>
-          <p class="mt-6 text-2xl font-semibold text-white">Me connecter sur LinkedIn</p>
+          <p class="mt-6 text-2xl font-semibold text-white">Connect with me on LinkedIn</p>
           <p class="mt-2 text-sm md:text-lg text-violet-200">@ons-yahmadi</p>
         </a>
       </div>
@@ -655,14 +608,13 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-white/10 bg-slate-950/80 py-10 text-center text-sm text-slate-400">
-    © 2026 Ons El Yahmadi • Design moderne, animé et premium • Tous les projets sont réels et déployés
+    © 2026 Ons El Yahmadi • Modern, animated and premium design • All projects are real and deployed
   </footer>
 
   <script>
     function toggleMobileMenu() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     }
-
     function filterProjects(event, cat) {
       document.querySelectorAll('#project-filters button').forEach(btn => btn.classList.remove('active'));
       event.currentTarget.classList.add('active');
@@ -670,16 +622,14 @@
         card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
       });
     }
-
     const projectsData = [
-      { title: "Potato Disease Classification", desc: "Modèle deep learning TensorFlow/Keras — 90% précision", tech: "TensorFlow • Keras • Vision", category: "ml", icon: "🧬" },
-      { title: "Credit Card Fraud Detection", desc: "Système 95% accuracy déployé full-stack Django", tech: "scikit-learn • Django • Angular", category: "ml", icon: "💳" },
-      { title: "EduZEN MLOps Pipeline", desc: "CI/CD complet pour LLM & ML avec Jenkins + Docker + NestJS", tech: "Jenkins • Docker • Google Colab", category: "mlops", icon: "🚀" },
-      { title: "Safe Life – App Mobile", desc: "Application Ionic de localisation d’équipements d’urgence", tech: "Ionic • MongoDB • Swagger", category: "mobile", icon: "📱" },
-      { title: "Gestion Fiscale Municipale", desc: "Full-stack Spring Boot + Angular + Google Maps + PayPal", tech: "Spring Boot • Angular • PostgreSQL", category: "fullstack", icon: "🏛️" },
-      { title: "Réservation MERN", desc: "Plateforme de réservation complète avec auth & admin panel", tech: "MERN • Next.js • Real-time", category: "fullstack", icon: "📅" }
+      { title: "Potato Disease Classification", desc: "Deep learning model with TensorFlow/Keras — 90% accuracy", tech: "TensorFlow • Keras • Computer Vision", category: "ml", icon: "🧬" },
+      { title: "Credit Card Fraud Detection", desc: "95% accuracy system deployed as full-stack Django application", tech: "scikit-learn • Django • Angular", category: "ml", icon: "💳" },
+      { title: "EduZEN MLOps Pipeline", desc: "Complete CI/CD pipeline for LLM & ML with Jenkins + Docker + NestJS", tech: "Jenkins • Docker • Google Colab", category: "mlops", icon: "🚀" },
+      { title: "Safe Life – Mobile App", desc: "Ionic mobile application for real-time emergency equipment location", tech: "Ionic • MongoDB • Swagger", category: "mobile", icon: "📱" },
+      { title: "Municipal Tax Management", desc: "Full-stack application with Spring Boot + Angular + Google Maps + PayPal", tech: "Spring Boot • Angular • PostgreSQL", category: "fullstack", icon: "🏛️" },
+      { title: "MERN Reservation Platform", desc: "Complete booking platform with authentication & admin panel", tech: "MERN • Next.js • Real-time", category: "fullstack", icon: "📅" }
     ];
-
     function renderProjects() {
       const grid = document.getElementById('projects-grid');
       grid.innerHTML = '';
@@ -696,23 +646,20 @@
             </div>
             <div class="overlay">
               <div class="flex items-center gap-3 text-lg font-semibold text-white md:text-xl">
-                Voir le cas d’étude <i class="fas fa-arrow-right"></i>
+                View case study <i class="fas fa-arrow-right"></i>
               </div>
             </div>
           </article>`;
       });
     }
-
     function initParticles() {
       const canvas = document.getElementById('hero-canvas');
       const ctx = canvas.getContext('2d');
       let particles = [];
-
       function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       }
-
       class Particle {
         constructor() {
           this.reset();
@@ -736,12 +683,10 @@
           ctx.fill();
         }
       }
-
       function createParticles(count) {
         particles = [];
         for (let i = 0; i < count; i++) particles.push(new Particle());
       }
-
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach((p, i) => {
@@ -763,29 +708,24 @@
         });
         requestAnimationFrame(animate);
       }
-
       resize();
       createParticles(120);
       animate();
-
       window.addEventListener('resize', () => {
         resize();
         createParticles(120);
       });
     }
-
     function revealOnScroll() {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) entry.target.classList.add('is-visible');
         });
       }, { threshold: 0.15 });
-
       document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
       document.querySelectorAll('#skills .card, #projects .project-card, #contact a').forEach(el => el.classList.add('scroll-animate'));
       document.querySelectorAll('#skills .card, #projects .project-card, #contact a').forEach(el => observer.observe(el));
     }
-
     window.onload = () => {
       renderProjects();
       initParticles();
