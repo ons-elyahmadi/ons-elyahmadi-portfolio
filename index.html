@@ -1,595 +1,615 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ons El Yahmadi - Portfolio MLOps &amp; Full-Stack Engineer ultra-moderne">
-  <title>Ons El Yahmadi | MLOps &amp; Full-Stack Engineer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-   
-    :root {
-      --teal: #14b8a6;
-    }
-   
-    .tail-container { font-family: 'Inter', system_ui, sans-serif; }
-    .heading-font { font-family: 'Space Grotesk', sans-serif; }
-   
-    .hero-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
-    }
-   
-    nav {
-      backdrop-filter: blur(24px);
-    }
-    .nav-link {
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .nav-link:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 3px;
-      bottom: -2px;
-      left: 0;
-      background: var(--teal);
-      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .nav-link:hover:after { width: 100%; }
-   
-    .glow {
-      text-shadow: 
-        0 0 15px var(--teal),
-        0 0 30px var(--teal),
-        0 0 60px rgba(20, 184, 166, 0.4);
-    }
-   
-    .card-hover {
-      transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .card-hover:hover {
-      transform: translateY(-14px) scale(1.05) rotate(1.5deg);
-      box-shadow: 0 45px 90px -25px rgb(20 184 166 / 0.45);
-    }
-   
-    .progress-bar {
-      transition: width 2.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-   
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(70px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .scroll-animate {
-      animation: fadeInUp 1s backwards;
-    }
-   
-    #hero-canvas {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-      opacity: 0.18;
-      pointer-events: none;
-    }
-   
-    .section-header {
-      position: relative;
-    }
-    .section-header:after {
-      content: '';
-      position: absolute;
-      width: 90px;
-      height: 4px;
-      background: linear-gradient(to right, var(--teal), transparent);
-      bottom: -12px;
-      left: 0;
-      border-radius: 9999px;
-    }
-   
-    .project-card {
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent, rgba(20,184,166,0.92));
-      opacity: 0;
-      transition: all 0.5s ease;
-      display: flex;
-      align-items: flex-end;
-      padding: 2rem;
-    }
-    .project-card:hover .overlay {
-      opacity: 1;
-    }
-   
-    .typing {
-      overflow: hidden;
-      border-right: 3px solid var(--teal);
-      white-space: nowrap;
-      animation: typing 3.5s steps(30, end) forwards,
-                 blink-caret 0.8s step-end infinite;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ons El Yahmadi - Portfolio MLOps &amp; Full-Stack Engineer ultra-moderne">
+    <title>Ons El Yahmadi | MLOps &amp; Full-Stack Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+
+        :root {
+            --accent: #C69A86;
+            --dark: #2E3445;
+            --dark2: #6C6F8F;
+            --light: #F3E6E0;
+            --muted: #A7A2B6;
+            --soft: #D9D4E8;
+            --accent-light: #E8C7B5;
+        }
+
+        .tail-container {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #2E3445 0%, #6C6F8F 100%);
+        }
+
+        nav {
+            backdrop-filter: blur(24px);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .glow {
+            text-shadow: 
+                0 0 15px var(--accent),
+                0 0 30px var(--accent),
+                0 0 60px rgba(198, 154, 134, 0.4);
+        }
+
+        .card-hover {
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-14px) scale(1.05) rotate(1.5deg);
+            box-shadow: 0 45px 90px -25px rgb(198 154 134 / 0.45);
+        }
+
+        .progress-bar {
+            transition: width 2.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(70px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .scroll-animate {
+            animation: fadeInUp 1s backwards;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+
+        .section-header {
+            position: relative;
+        }
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            bottom: -12px;
+            left: 0;
+            border-radius: 9999px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(198,154,134,0.92));
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .typing {
+            overflow: hidden;
+            border-right: 3px solid var(--accent);
+            white-space: nowrap;
+            animation: typing 3.5s steps(30, end) forwards,
+                       blink-caret 0.8s step-end infinite;
+        }
+
+        /* Nouveaux styles pour une clarté et modernité accrue */
+        .clean-text {
+            color: #F3E6E0;
+        }
+        .muted-text {
+            color: #A7A2B6;
+        }
+        .soft-text {
+            color: #D9D4E8;
+        }
+    </style>
 </head>
-<body class="tail-container bg-gray-950 text-white overflow-x-hidden">
-
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full bg-gray-950/90 backdrop-blur-3xl border-b border-gray-800 z-50">
-    <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-[#14b8a6] rounded-3xl flex items-center justify-center text-gray-950 font-bold text-3xl shadow-2xl">O</div>
-        <h1 class="heading-font text-3xl tracking-[-2px]">Ons El Yahmadi</h1>
-      </div>
-
-      <div class="hidden md:flex items-center gap-10 text-base font-medium">
-        <a href="#about" class="nav-link">À propos</a>
-        <a href="#experience" class="nav-link">Expérience</a>
-        <a href="#skills" class="nav-link">Compétences</a>
-        <a href="#projects" class="nav-link">Projets</a>
-        <a href="#education" class="nav-link">Formation</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-
-      <button id="mobile-btn" class="md:hidden text-3xl text-[#14b8a6]">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <a href="#" onclick="downloadCV()" 
-         class="hidden md:flex items-center gap-3 bg-[#14b8a6] hover:bg-[#0f7665] text-gray-950 px-8 py-3 rounded-3xl font-semibold text-base transition-all shadow-2xl shadow-[#14b8a6]/40">
-        <i class="fas fa-download"></i>
-        <span>Télécharger CV</span>
-      </a>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 px-8 py-6">
-      <div class="flex flex-col gap-6 text-lg">
-        <a href="#about" class="nav-link" onclick="toggleMobileMenu()">À propos</a>
-        <a href="#experience" class="nav-link" onclick="toggleMobileMenu()">Expérience</a>
-        <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Compétences</a>
-        <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projets</a>
-        <a href="#education" class="nav-link" onclick="toggleMobileMenu()">Formation</a>
-        <a href="#contact" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
-        <a href="#" onclick="downloadCV()" class="mt-4 flex justify-center bg-[#14b8a6] text-gray-950 py-4 rounded-3xl font-semibold">Télécharger CV</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section id="hero" class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
-    <canvas id="hero-canvas"></canvas>
-    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-center relative z-10">
-      <div class="md:col-span-7">
-        <div class="inline-flex items-center gap-3 px-6 py-3 bg-gray-900/70 backdrop-blur-xl border border-[#14b8a6]/40 rounded-3xl text-[#14b8a6] text-sm mb-8">
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#14b8a6] opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#14b8a6]"></span>
-          </span>
-          Disponible • Tunis, Tunisie
-        </div>
-
-        <h1 class="heading-font text-7xl md:text-[90px] leading-none font-semibold tracking-[-3px] mb-4 glow">Ons El Yahmadi</h1>
-        <p id="role" class="text-4xl text-[#14b8a6] mb-8 typing">MLOps &amp; Full-Stack Engineer</p>
-
-        <p class="max-w-xl text-2xl text-gray-300 leading-tight mb-12">
-          Je transforme des modèles d’IA en solutions production-ready.<br>
-          <span class="text-[#14b8a6]">Calme, précis et passionné par le code qui impacte.</span>
-        </p>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="#projects" class="flex items-center gap-4 bg-[#14b8a6] hover:bg-white text-gray-950 px-10 py-5 rounded-3xl font-semibold text-xl transition-all">Découvrir mes projets <i class="fas fa-arrow-right text-2xl"></i></a>
-          <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank" class="flex items-center gap-4 border-2 border-[#14b8a6] hover:bg-[#14b8a6]/10 px-10 py-5 rounded-3xl font-semibold text-xl">
-            <i class="fab fa-linkedin text-3xl"></i> LinkedIn
-          </a>
-        </div>
-
-        <div class="mt-20 flex items-center gap-12 text-sm">
-          <div class="flex items-center gap-3"><i class="fas fa-phone text-[#14b8a6]"></i><p class="font-medium">+216 58 217 800</p></div>
-          <div class="flex items-center gap-3"><i class="fas fa-envelope text-[#14b8a6]"></i><p class="font-medium">ons.elyahmadi@fsb.ucar.tn</p></div>
-          <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-[#14b8a6]"></i><p class="font-medium">Tunis, Tunisie 🇹🇳</p></div>
-        </div>
-      </div>
-
-      <div class="md:col-span-5 flex justify-center">
-        <div class="relative">
-          <div class="w-80 h-80 md:w-96 md:h-96 rounded-[3rem] overflow-hidden border-8 border-[#14b8a6] shadow-[0_0_80px_-10px] shadow-[#14b8a6] transition-all duration-700 hover:rotate-3 hover:scale-105">
-            <img src="https://picsum.photos/id/64/800/800" alt="Ons El Yahmadi" class="w-full h-full object-cover">
-          </div>
-          <div class="absolute -bottom-6 -right-6 bg-gray-900 border border-[#14b8a6] rounded-3xl px-7 py-4 flex items-center gap-4 shadow-2xl">
-            <span class="text-5xl">🇹🇳</span>
-            <div>
-              <p class="text-xs uppercase tracking-widest text-gray-400">Tunisienne</p>
-              <p class="font-bold text-[#14b8a6]">Passionnée d’IA &amp; design</p>
+<body class="tail-container bg-[#2E3445] text-[#F3E6E0] overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full bg-[#2E3445]/90 backdrop-blur-3xl border-b border-[#6C6F8F] z-50">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#C69A86] rounded-3xl flex items-center justify-center text-[#2E3445] font-bold text-3xl shadow-2xl">O</div>
+                <h1 class="heading-font text-3xl tracking-[-2px]">Ons El Yahmadi</h1>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-28 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-8">
-      <div class="grid md:grid-cols-2 gap-20 items-center">
-        <div>
-          <span class="px-6 py-3 bg-[#14b8a6]/10 text-[#14b8a6] rounded-3xl text-sm font-semibold">QUI SUIS-JE</span>
-          <h2 class="heading-font text-6xl font-semibold tracking-[-2px] mt-6 mb-8 section-header">Software Engineer &amp; MLOps qui rend l’IA belle, scalable et production-ready</h2>
-          <p class="text-2xl text-gray-300 leading-relaxed">
-            Versatile engineer expert en MLOps, full-stack et data science. Je construis des pipelines CI/CD, des applications web/mobile modernes et des modèles d’IA qui passent du notebook à la production avec précision et élégance.
-          </p>
-          <p class="text-xl text-gray-400 mt-8">Calme dans l’exécution • Passionnée par l’innovation • Toujours prête à créer des solutions qui impactent.</p>
-        </div>
-        <div class="grid grid-cols-2 gap-8">
-          <div class="bg-gray-950 rounded-3xl p-10 text-center card-hover border border-[#14b8a6]/10">
-            <i class="fas fa-rocket text-7xl text-[#14b8a6] mb-6"></i>
-            <h4 class="text-2xl font-semibold">MLOps &amp; Production</h4>
-            <p class="text-gray-400 mt-3">CI/CD • Docker • Jenkins • Monitoring LLM</p>
-          </div>
-          <div class="bg-gray-950 rounded-3xl p-10 text-center card-hover border border-[#14b8a6]/10">
-            <i class="fas fa-brain text-7xl text-[#14b8a6] mb-6"></i>
-            <h4 class="text-2xl font-semibold">Machine Learning</h4>
-            <p class="text-gray-400 mt-3">Computer Vision • NLP • Time Series • Fraud Detection</p>
-          </div>
-          <div class="bg-gray-950 rounded-3xl p-10 text-center card-hover border border-[#14b8a6]/10">
-            <i class="fas fa-laptop-code text-7xl text-[#14b8a6] mb-6"></i>
-            <h4 class="text-2xl font-semibold">Full-Stack Moderne</h4>
-            <p class="text-gray-400 mt-3">Next.js • NestJS • MERN • Ionic • Spring Boot</p>
-          </div>
-          <div class="bg-gray-950 rounded-3xl p-10 text-center card-hover border border-[#14b8a6]/10">
-            <i class="fas fa-globe text-7xl text-[#14b8a6] mb-6"></i>
-            <h4 class="text-2xl font-semibold">Data Engineering</h4>
-            <p class="text-gray-400 mt-3">ETL • Power BI • Tableau • SSIS • Azure</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="py-28">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="heading-font text-6xl font-semibold text-center mb-20 section-header">Expériences professionnelles</h2>
-      <div class="space-y-20">
-
-        <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 100ms">
-          <div class="md:w-1/3">
-            <div class="bg-[#14b8a6] text-gray-950 inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Jan – Juin 2025</div>
-            <h3 class="text-3xl font-semibold">MLOps Intern</h3>
-            <p class="text-[#14b8a6] text-2xl">EduZEN • Tunis</p>
-          </div>
-          <div class="md:w-2/3 bg-gray-900 rounded-3xl p-12 card-hover">
-            <ul class="space-y-6 text-xl">
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Développement de features IA pour gestion du stress et scheduling (NestJS + Next.js + MySQL)</li>
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Pipeline MLOps complet avec Google Colab pour entraînement ML &amp; LLM</li>
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>CI/CD automatisé avec Jenkins et Docker</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 300ms">
-          <div class="md:w-1/3">
-            <div class="bg-gray-800 inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Sep – Nov 2024</div>
-            <h3 class="text-3xl font-semibold">Software Developer Intern</h3>
-            <p class="text-[#14b8a6] text-2xl">APAIA Technologies • Paris</p>
-          </div>
-          <div class="md:w-2/3 bg-gray-900 rounded-3xl p-12 card-hover">
-            <ul class="space-y-6 text-xl">
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Application mobile Safe Life (Ionic + MongoDB) – localisation équipements d’urgence en temps réel</li>
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Documentation &amp; tests REST API avec Swagger</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 500ms">
-          <div class="md:w-1/3">
-            <div class="bg-gray-800 inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Fév – Oct 2024</div>
-            <h3 class="text-3xl font-semibold">Data Scientist Intern</h3>
-            <p class="text-[#14b8a6] text-2xl">Coficab Group • Tunis</p>
-          </div>
-          <div class="md:w-2/3 bg-gray-900 rounded-3xl p-12 card-hover">
-            <ul class="space-y-6 text-xl">
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Automatisation de pipelines data (Python + SSIS) et applications web Angular + Flask</li>
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Modèles Time Series (ARIMA, ARCH) – 85% accuracy + Power BI dashboards avec ETL</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 700ms">
-          <div class="md:w-1/3">
-            <div class="bg-gray-800 inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Fév – Juin 2022</div>
-            <h3 class="text-3xl font-semibold">Full-Stack Developer Intern</h3>
-            <p class="text-[#14b8a6] text-2xl">CNI • Tunis</p>
-          </div>
-          <div class="md:w-2/3 bg-gray-900 rounded-3xl p-12 card-hover">
-            <ul class="space-y-6 text-xl">
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Application de gestion fiscale municipale (Spring Boot + Angular + PostgreSQL)</li>
-              <li class="flex gap-4"><i class="fas fa-check-circle text-[#14b8a6] mt-1 text-2xl"></i>Intégration Google Maps &amp; PayPal</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="py-28 bg-gray-900">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="heading-font text-6xl font-semibold text-center mb-20 section-header">Compétences &amp; Outils</h2>
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="bg-gray-950 rounded-3xl p-10 card-hover">
-          <h4 class="uppercase text-[#14b8a6] text-xl flex items-center gap-3 mb-8"><i class="fas fa-code"></i> Programmation</h4>
-          <div class="space-y-9">
-            <div><div class="flex justify-between mb-3"><span class="text-xl">Python</span><span class="font-mono text-[#14b8a6]">95%</span></div><div class="h-3 bg-gray-800 rounded-3xl"><div class="progress-bar h-3 bg-[#14b8a6] rounded-3xl w-[95%]"></div></div></div>
-            <div><div class="flex justify-between mb-3"><span class="text-xl">Java / Spring Boot</span><span class="font-mono text-[#14b8a6]">90%</span></div><div class="h-3 bg-gray-800 rounded-3xl"><div class="progress-bar h-3 bg-[#14b8a6] rounded-3xl w-[90%]"></div></div></div>
-            <div><div class="flex justify-between mb-3"><span class="text-xl">JavaScript / TypeScript</span><span class="font-mono text-[#14b8a6]">88%</span></div><div class="h-3 bg-gray-800 rounded-3xl"><div class="progress-bar h-3 bg-[#14b8a6] rounded-3xl w-[88%]"></div></div></div>
-            <div><div class="flex justify-between mb-3"><span class="text-xl">SQL • R • C#</span><span class="font-mono text-[#14b8a6]">87%</span></div><div class="h-3 bg-gray-800 rounded-3xl"><div class="progress-bar h-3 bg-[#14b8a6] rounded-3xl w-[87%]"></div></div></div>
-          </div>
-        </div>
-
-        <div class="bg-gray-950 rounded-3xl p-10 card-hover">
-          <h4 class="uppercase text-[#14b8a6] text-xl flex items-center gap-3 mb-8"><i class="fas fa-server"></i> MLOps &amp; DevOps</h4>
-          <div class="flex flex-wrap gap-4">
-            <div class="bg-gray-900 px-7 py-4 rounded-3xl text-lg">Docker</div>
-            <div class="bg-gray-900 px-7 py-4 rounded-3xl text-lg">Jenkins</div>
-            <div class="bg-gray-900 px-7 py-4 rounded-3xl text-lg">GitLab CI/CD</div>
-            <div class="bg-gray-900 px-7 py-4 rounded-3xl text-lg">Prometheus + Grafana</div>
-            <div class="bg-gray-900 px-7 py-4 rounded-3xl text-lg">SonarQube</div>
-            <div class="bg-gray-900 px-7 py-4 rounded-3xl text-lg">SSIS • Linux • Azure</div>
-          </div>
-        </div>
-
-        <div class="bg-gray-950 rounded-3xl p-10 card-hover">
-          <h4 class="uppercase text-[#14b8a6] text-xl flex items-center gap-3 mb-8"><i class="fas fa-cubes"></i> Frameworks &amp; IA</h4>
-          <div class="flex flex-wrap gap-3 text-lg">
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">TensorFlow / Keras</span>
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">scikit-learn</span>
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">NestJS • Next.js</span>
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">Angular • MERN</span>
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">Django • Flask</span>
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">Spring Boot • .NET Core</span>
-            <span class="px-7 py-3 bg-gray-900 rounded-3xl">Ionic • MongoDB</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-20 grid md:grid-cols-2 gap-12">
-        <div>
-          <h4 class="text-3xl font-semibold mb-8">Langues</h4>
-          <div class="flex flex-col gap-8">
-            <div class="flex justify-between items-center"><span class="text-2xl">Français</span><span class="text-[#14b8a6] font-bold">Fluent</span></div>
-            <div class="flex justify-between items-center"><span class="text-2xl">Arabe</span><span class="text-[#14b8a6] font-bold">Natif</span></div>
-            <div class="flex justify-between items-center"><span class="text-2xl">Anglais</span><span class="text-[#14b8a6] font-bold">Advanced</span></div>
-            <div class="flex justify-between items-center"><span class="text-2xl">Espagnol</span><span class="text-[#14b8a6] font-bold">Beginner</span></div>
-          </div>
-        </div>
-        <div>
-          <h4 class="text-3xl font-semibold mb-8">Soft Skills &amp; Passion</h4>
-          <div class="flex flex-wrap gap-4">
-            <div class="px-8 py-4 bg-gray-900 rounded-3xl">Pensée analytique</div>
-            <div class="px-8 py-4 bg-gray-900 rounded-3xl">Travail d’équipe</div>
-            <div class="px-8 py-4 bg-gray-900 rounded-3xl">Adaptabilité</div>
-            <div class="px-8 py-4 bg-gray-900 rounded-3xl">Mindset humanitaire (Croissant-Rouge)</div>
-            <div class="px-8 py-4 bg-gray-900 rounded-3xl">Créativité technique</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="py-28">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="heading-font text-6xl font-semibold mb-12 section-header">Projets phares</h2>
-      <div class="flex flex-wrap gap-4 mb-12" id="project-filters">
-        <button onclick="filterProjects('all')" class="project-filter active px-8 py-4 rounded-3xl font-semibold">Tout</button>
-        <button onclick="filterProjects('ml')" class="project-filter px-8 py-4 rounded-3xl font-semibold">ML &amp; IA</button>
-        <button onclick="filterProjects('mlops')" class="project-filter px-8 py-4 rounded-3xl font-semibold">MLOps</button>
-        <button onclick="filterProjects('fullstack')" class="project-filter px-8 py-4 rounded-3xl font-semibold">Full-Stack</button>
-        <button onclick="filterProjects('mobile')" class="project-filter px-8 py-4 rounded-3xl font-semibold">Mobile</button>
-      </div>
-      <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education" class="py-28 bg-gray-900">
-    <div class="max-w-7xl mx-auto px-8">
-      <h2 class="heading-font text-6xl font-semibold text-center mb-20 section-header">Formation</h2>
-      <div class="space-y-12">
-        <div class="bg-gray-950 rounded-3xl p-14 card-hover scroll-animate">
-          <div class="flex flex-col md:flex-row justify-between gap-8">
-            <div>
-              <span class="text-[#14b8a6] text-xl">2023 — 2025</span>
-              <h3 class="text-3xl font-semibold mt-2">Ingénierie Logicielle</h3>
-              <p class="text-xl text-gray-400">TEK-UP University</p>
+            <div class="hidden md:flex items-center gap-10 text-base font-medium">
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#experience" class="nav-link">Expérience</a>
+                <a href="#skills" class="nav-link">Compétences</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#education" class="nav-link">Formation</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="flex-1 text-2xl text-gray-300">
-              • Système de réservation complet MERN<br>
-              • Application de gestion de consultation (Spring Boot + Angular)<br>
-              • Modèle classification maladies de la pomme de terre (TensorFlow/Keras – 90% accuracy)<br>
-              • Modèle de scoring crédit
-            </div>
-          </div>
+            <button id="mobile-btn" class="md:hidden text-3xl text-[#C69A86]">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="#" onclick="downloadCV()" 
+               class="hidden md:flex items-center gap-3 bg-[#C69A86] hover:bg-[#E8C7B5] text-[#2E3445] px-8 py-3 rounded-3xl font-semibold text-base transition-all shadow-2xl shadow-[#C69A86]/40">
+                <i class="fas fa-download"></i>
+                <span>Télécharger CV</span>
+            </a>
         </div>
-        <div class="bg-gray-950 rounded-3xl p-14 card-hover scroll-animate">
-          <div class="flex flex-col md:flex-row justify-between gap-8">
-            <div>
-              <span class="text-[#14b8a6] text-xl">2022 — 2024</span>
-              <h3 class="text-3xl font-semibold mt-2">Master Professionnel Data Science</h3>
-              <p class="text-xl text-gray-400">Faculté des Sciences de Bizerte</p>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#6C6F8F] border-t border-[#6C6F8F] px-8 py-6">
+            <div class="flex flex-col gap-6 text-lg">
+                <a href="#about" class="nav-link" onclick="toggleMobileMenu()">À propos</a>
+                <a href="#experience" class="nav-link" onclick="toggleMobileMenu()">Expérience</a>
+                <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Compétences</a>
+                <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projets</a>
+                <a href="#education" class="nav-link" onclick="toggleMobileMenu()">Formation</a>
+                <a href="#contact" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
+                <a href="#" onclick="downloadCV()" class="mt-4 flex justify-center bg-[#C69A86] text-[#2E3445] py-4 rounded-3xl font-semibold">Télécharger CV</a>
             </div>
-            <div class="flex-1 text-2xl text-gray-300">
-              • Détection fraude cartes bancaires (scikit-learn – 95% accuracy) déployé Django full-stack<br>
-              • Tableau de bord interactif business intelligence (Flask + Angular)<br>
-              • Screening CV automatique via NLP (NLTK + TF-IDF)<br>
-              • Modèles Time Series (ARIMA, ARCH)
-            </div>
-          </div>
         </div>
-        <div class="bg-gray-950 rounded-3xl p-14 card-hover scroll-animate">
-          <div class="flex flex-col md:flex-row justify-between gap-8">
-            <div>
-              <span class="text-[#14b8a6] text-xl">2019 — 2022</span>
-              <h3 class="text-3xl font-semibold mt-2">Bachelor Software Engineering &amp; Information Systems</h3>
-              <p class="text-xl text-gray-400">Faculté des Sciences de Bizerte</p>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <canvas id="hero-canvas"></canvas>
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-center relative z-10">
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-3 px-6 py-3 bg-[#2E3445]/70 backdrop-blur-xl border border-[#C69A86]/40 rounded-3xl text-[#C69A86] text-sm mb-8">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C69A86] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#C69A86]"></span>
+                    </span>
+                    Disponible • Tunis, Tunisie
+                </div>
+                <h1 class="heading-font text-7xl md:text-[90px] leading-none font-semibold tracking-[-3px] mb-4 glow">Ons El Yahmadi</h1>
+                <p id="role" class="text-4xl text-[#C69A86] mb-8 typing">MLOps &amp; Full-Stack Engineer</p>
+                <p class="max-w-xl text-2xl soft-text leading-tight mb-12">
+                    Je transforme des modèles d’IA en solutions production-ready.<br>
+                    <span class="text-[#C69A86]">Calme, précis et passionnée par le code qui impacte.</span>
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="flex items-center gap-4 bg-[#C69A86] hover:bg-[#E8C7B5] text-[#2E3445] px-10 py-5 rounded-3xl font-semibold text-xl transition-all">Découvrir mes projets <i class="fas fa-arrow-right text-2xl"></i></a>
+                    <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank" class="flex items-center gap-4 border-2 border-[#C69A86] hover:bg-[#C69A86]/10 px-10 py-5 rounded-3xl font-semibold text-xl">
+                        <i class="fab fa-linkedin text-3xl"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="mt-20 flex items-center gap-12 text-sm">
+                    <div class="flex items-center gap-3"><i class="fas fa-phone text-[#C69A86]"></i><p class="font-medium">+216 58 217 800</p></div>
+                    <div class="flex items-center gap-3"><i class="fas fa-envelope text-[#C69A86]"></i><p class="font-medium">ons.elyahmadi@fsb.ucar.tn</p></div>
+                    <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-[#C69A86]"></i><p class="font-medium">Tunis, Tunisie 🇹🇳</p></div>
+                </div>
             </div>
-            <div class="flex-1 text-2xl text-gray-300">
-              • Système de gestion de bibliothèque (.NET Core + GitLab CI/CD)<br>
-              • Dashboard Excel d’analyse des tendances marché
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative">
+                    <div class="w-80 h-80 md:w-96 md:h-96 rounded-[3rem] overflow-hidden border-8 border-[#C69A86] shadow-[0_0_80px_-10px] shadow-[#C69A86] transition-all duration-700 hover:rotate-3 hover:scale-105">
+                        <img src="https://picsum.photos/id/64/800/800" alt="Ons El Yahmadi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-[#2E3445] border border-[#C69A86] rounded-3xl px-7 py-4 flex items-center gap-4 shadow-2xl">
+                        <span class="text-5xl">🇹🇳</span>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-[#A7A2B6]">Tunisienne</p>
+                            <p class="font-bold text-[#C69A86]">Passionnée d’IA &amp; design</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-28 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-8 text-center">
-      <h2 class="heading-font text-6xl font-semibold mb-8">Prêt à créer quelque chose d’exceptionnel ?</h2>
-      <p class="text-3xl text-gray-400 mb-16">MLOps • Full-Stack • IA • Data Science</p>
-      
-      <div class="flex flex-col md:flex-row gap-8 justify-center">
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ons.elyahmadi@fsb.ucar.tn" target="_blank" 
-           class="flex-1 bg-gray-950 hover:bg-[#14b8a6] hover:text-gray-950 border-2 border-[#14b8a6] rounded-3xl p-12 text-left card-hover">
-          <i class="fas fa-envelope text-6xl mb-8"></i>
-          <p class="text-3xl font-semibold">M’envoyer un mail via Gmail</p>
-          <p class="text-[#14b8a6] text-xl">ons.elyahmadi@fsb.ucar.tn</p>
-        </a>
-        <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank" 
-           class="flex-1 bg-gray-950 hover:bg-[#14b8a6] hover:text-gray-950 border-2 border-[#14b8a6] rounded-3xl p-12 text-left card-hover">
-          <i class="fab fa-linkedin text-6xl mb-8"></i>
-          <p class="text-3xl font-semibold">Me connecter sur LinkedIn</p>
-          <p class="text-[#14b8a6] text-xl">@ons-yahmadi</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-black py-12 text-center text-gray-400">
-    © 2026 Ons El Yahmadi • Design ultra-moderne &amp; animé avec passion • Tous les projets sont réels et déployés
-  </footer>
-
-  <script>
-    function filterProjects(cat) {
-      document.querySelectorAll('#project-filters button').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
-      });
-    }
-
-    const projectsData = [
-      { title: "Potato Disease Classification", desc: "Modèle deep learning TensorFlow/Keras — 90% précision", tech: "TensorFlow • Keras • Vision", category: "ml", icon: "🧬" },
-      { title: "Credit Card Fraud Detection", desc: "Système 95% accuracy déployé full-stack Django", tech: "scikit-learn • Django • Angular", category: "ml", icon: "💳" },
-      { title: "EduZEN MLOps Pipeline", desc: "CI/CD complet pour LLM & ML avec Jenkins + Docker + NestJS", tech: "Jenkins • Docker • Google Colab", category: "mlops", icon: "🚀" },
-      { title: "Safe Life – App Mobile", desc: "Application Ionic de localisation d’équipements d’urgence", tech: "Ionic • MongoDB • Swagger", category: "mobile", icon: "📱" },
-      { title: "Gestion Fiscale Municipale", desc: "Full-stack Spring Boot + Angular + Google Maps + PayPal", tech: "Spring Boot • Angular • PostgreSQL", category: "fullstack", icon: "🏛️" },
-      { title: "Réservation MERN", desc: "Plateforme de réservation complète avec auth & admin panel", tech: "MERN • Next.js • Real-time", category: "fullstack", icon: "📅" }
-    ];
-
-    function renderProjects() {
-      const grid = document.getElementById('projects-grid');
-      grid.innerHTML = '';
-      projectsData.forEach((p, i) => {
-        const cardHTML = `
-          <div class="project-card bg-gray-900 rounded-3xl overflow-hidden card-hover" data-category="${p.category}" style="animation-delay: ${i*80}ms">
-            <div class="h-2 bg-gradient-to-r from-[#14b8a6] to-cyan-400"></div>
-            <div class="p-8">
-              <div class="text-7xl mb-8">${p.icon}</div>
-              <h3 class="text-3xl font-semibold mb-4">${p.title}</h3>
-              <p class="text-gray-400 text-xl mb-8">${p.desc}</p>
-              <div class="flex flex-wrap gap-3">
-                ${p.tech.split('•').map(t => `<span class="text-sm bg-gray-800 text-[#14b8a6] px-5 py-2 rounded-3xl">${t.trim()}</span>`).join('')}
-              </div>
+    <!-- ABOUT -->
+    <section id="about" class="py-28 bg-[#6C6F8F]">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <span class="px-6 py-3 bg-[#C69A86]/10 text-[#C69A86] rounded-3xl text-sm font-semibold">QUI SUIS-JE</span>
+                    <h2 class="heading-font text-6xl font-semibold tracking-[-2px] mt-6 mb-8 section-header">Software Engineer &amp; MLOps qui rend l’IA belle, scalable et production-ready</h2>
+                    <p class="text-2xl soft-text leading-relaxed">
+                        Versatile engineer expert en MLOps, full-stack et data science. Je construis des pipelines CI/CD, des applications web/mobile modernes et des modèles d’IA qui passent du notebook à la production avec précision et élégance.
+                    </p>
+                    <p class="text-xl muted-text mt-8">Calme dans l’exécution • Passionnée par l’innovation • Toujours prête à créer des solutions qui impactent.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="bg-[#2E3445] rounded-3xl p-10 text-center card-hover border border-[#C69A86]/10">
+                        <i class="fas fa-rocket text-7xl text-[#C69A86] mb-6"></i>
+                        <h4 class="text-2xl font-semibold">MLOps &amp; Production</h4>
+                        <p class="muted-text mt-3">CI/CD • Docker • Jenkins • Monitoring LLM</p>
+                    </div>
+                    <div class="bg-[#2E3445] rounded-3xl p-10 text-center card-hover border border-[#C69A86]/10">
+                        <i class="fas fa-brain text-7xl text-[#C69A86] mb-6"></i>
+                        <h4 class="text-2xl font-semibold">Machine Learning</h4>
+                        <p class="muted-text mt-3">Computer Vision • NLP • Time Series • Fraud Detection</p>
+                    </div>
+                    <div class="bg-[#2E3445] rounded-3xl p-10 text-center card-hover border border-[#C69A86]/10">
+                        <i class="fas fa-laptop-code text-7xl text-[#C69A86] mb-6"></i>
+                        <h4 class="text-2xl font-semibold">Full-Stack Moderne</h4>
+                        <p class="muted-text mt-3">Next.js • NestJS • MERN • Ionic • Spring Boot</p>
+                    </div>
+                    <div class="bg-[#2E3445] rounded-3xl p-10 text-center card-hover border border-[#C69A86]/10">
+                        <i class="fas fa-globe text-7xl text-[#C69A86] mb-6"></i>
+                        <h4 class="text-2xl font-semibold">Data Engineering</h4>
+                        <p class="muted-text mt-3">ETL • Power BI • Tableau • SSIS • Azure</p>
+                    </div>
+                </div>
             </div>
-            <div class="overlay">
-              <div class="text-white text-2xl font-semibold flex items-center gap-3">Voir le cas d’étude <i class="fas fa-arrow-right"></i></div>
-            </div>
-          </div>`;
-        grid.innerHTML += cardHTML;
-      });
-    }
+        </div>
+    </section>
 
-    function initParticles() {
-      const canvas = document.getElementById('hero-canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      let particles = [];
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.size = Math.random() * 3 + 1;
-          this.speedX = Math.random() * 1.8 - 0.9;
-          this.speedY = Math.random() * 1.8 - 0.9;
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-28">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="heading-font text-6xl font-semibold text-center mb-20 section-header">Expériences professionnelles</h2>
+            <div class="space-y-20">
+                <!-- Expérience 1 -->
+                <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 100ms">
+                    <div class="md:w-1/3">
+                        <div class="bg-[#C69A86] text-[#2E3445] inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Jan – Juin 2025</div>
+                        <h3 class="text-3xl font-semibold">MLOps Intern</h3>
+                        <p class="text-[#C69A86] text-2xl">EduZEN • Tunis</p>
+                    </div>
+                    <div class="md:w-2/3 bg-[#6C6F8F] rounded-3xl p-12 card-hover">
+                        <ul class="space-y-6 text-xl">
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Développement de features IA pour gestion du stress et scheduling (NestJS + Next.js + MySQL)</li>
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Pipeline MLOps complet avec Google Colab pour entraînement ML &amp; LLM</li>
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>CI/CD automatisé avec Jenkins et Docker</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Expérience 2 -->
+                <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 300ms">
+                    <div class="md:w-1/3">
+                        <div class="bg-[#6C6F8F] inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Sep – Nov 2024</div>
+                        <h3 class="text-3xl font-semibold">Software Developer Intern</h3>
+                        <p class="text-[#C69A86] text-2xl">APAIA Technologies • Paris</p>
+                    </div>
+                    <div class="md:w-2/3 bg-[#6C6F8F] rounded-3xl p-12 card-hover">
+                        <ul class="space-y-6 text-xl">
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Application mobile Safe Life (Ionic + MongoDB) – localisation équipements d’urgence en temps réel</li>
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Documentation &amp; tests REST API avec Swagger</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Expérience 3 -->
+                <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 500ms">
+                    <div class="md:w-1/3">
+                        <div class="bg-[#6C6F8F] inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Fév – Oct 2024</div>
+                        <h3 class="text-3xl font-semibold">Data Scientist Intern</h3>
+                        <p class="text-[#C69A86] text-2xl">Coficab Group • Tunis</p>
+                    </div>
+                    <div class="md:w-2/3 bg-[#6C6F8F] rounded-3xl p-12 card-hover">
+                        <ul class="space-y-6 text-xl">
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Automatisation de pipelines data (Python + SSIS) et applications web Angular + Flask</li>
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Modèles Time Series (ARIMA, ARCH) – 85% accuracy + Power BI dashboards avec ETL</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Expérience 4 -->
+                <div class="flex flex-col md:flex-row gap-12 scroll-animate" style="animation-delay: 700ms">
+                    <div class="md:w-1/3">
+                        <div class="bg-[#6C6F8F] inline-flex px-8 py-3 rounded-3xl font-semibold text-lg mb-4">Fév – Juin 2022</div>
+                        <h3 class="text-3xl font-semibold">Full-Stack Developer Intern</h3>
+                        <p class="text-[#C69A86] text-2xl">CNI • Tunis</p>
+                    </div>
+                    <div class="md:w-2/3 bg-[#6C6F8F] rounded-3xl p-12 card-hover">
+                        <ul class="space-y-6 text-xl">
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Application de gestion fiscale municipale (Spring Boot + Angular + PostgreSQL)</li>
+                            <li class="flex gap-4"><i class="fas fa-check-circle text-[#C69A86] mt-1 text-2xl"></i>Intégration Google Maps &amp; PayPal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-28 bg-[#6C6F8F]">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="heading-font text-6xl font-semibold text-center mb-20 section-header">Compétences &amp; Outils</h2>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Programmation -->
+                <div class="bg-[#2E3445] rounded-3xl p-10 card-hover">
+                    <h4 class="uppercase text-[#C69A86] text-xl flex items-center gap-3 mb-8"><i class="fas fa-code"></i> Programmation</h4>
+                    <div class="space-y-9">
+                        <div><div class="flex justify-between mb-3"><span class="text-xl">Python</span><span class="font-mono text-[#C69A86]">95%</span></div><div class="h-3 bg-[#6C6F8F] rounded-3xl"><div class="progress-bar h-3 bg-[#C69A86] rounded-3xl w-[95%]"></div></div></div>
+                        <div><div class="flex justify-between mb-3"><span class="text-xl">Java / Spring Boot</span><span class="font-mono text-[#C69A86]">90%</span></div><div class="h-3 bg-[#6C6F8F] rounded-3xl"><div class="progress-bar h-3 bg-[#C69A86] rounded-3xl w-[90%]"></div></div></div>
+                        <div><div class="flex justify-between mb-3"><span class="text-xl">JavaScript / TypeScript</span><span class="font-mono text-[#C69A86]">88%</span></div><div class="h-3 bg-[#6C6F8F] rounded-3xl"><div class="progress-bar h-3 bg-[#C69A86] rounded-3xl w-[88%]"></div></div></div>
+                        <div><div class="flex justify-between mb-3"><span class="text-xl">SQL • R • C#</span><span class="font-mono text-[#C69A86]">87%</span></div><div class="h-3 bg-[#6C6F8F] rounded-3xl"><div class="progress-bar h-3 bg-[#C69A86] rounded-3xl w-[87%]"></div></div></div>
+                    </div>
+                </div>
+                <!-- MLOps -->
+                <div class="bg-[#2E3445] rounded-3xl p-10 card-hover">
+                    <h4 class="uppercase text-[#C69A86] text-xl flex items-center gap-3 mb-8"><i class="fas fa-server"></i> MLOps &amp; DevOps</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-[#6C6F8F] px-7 py-4 rounded-3xl text-lg">Docker</div>
+                        <div class="bg-[#6C6F8F] px-7 py-4 rounded-3xl text-lg">Jenkins</div>
+                        <div class="bg-[#6C6F8F] px-7 py-4 rounded-3xl text-lg">GitLab CI/CD</div>
+                        <div class="bg-[#6C6F8F] px-7 py-4 rounded-3xl text-lg">Prometheus + Grafana</div>
+                        <div class="bg-[#6C6F8F] px-7 py-4 rounded-3xl text-lg">SonarQube</div>
+                        <div class="bg-[#6C6F8F] px-7 py-4 rounded-3xl text-lg">SSIS • Linux • Azure</div>
+                    </div>
+                </div>
+                <!-- Frameworks -->
+                <div class="bg-[#2E3445] rounded-3xl p-10 card-hover">
+                    <h4 class="uppercase text-[#C69A86] text-xl flex items-center gap-3 mb-8"><i class="fas fa-cubes"></i> Frameworks &amp; IA</h4>
+                    <div class="flex flex-wrap gap-3 text-lg">
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">TensorFlow / Keras</span>
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">scikit-learn</span>
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">NestJS • Next.js</span>
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">Angular • MERN</span>
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">Django • Flask</span>
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">Spring Boot • .NET Core</span>
+                        <span class="px-7 py-3 bg-[#6C6F8F] rounded-3xl">Ionic • MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-3xl font-semibold mb-8">Langues</h4>
+                    <div class="flex flex-col gap-8">
+                        <div class="flex justify-between items-center"><span class="text-2xl">Français</span><span class="text-[#C69A86] font-bold">Fluent</span></div>
+                        <div class="flex justify-between items-center"><span class="text-2xl">Arabe</span><span class="text-[#C69A86] font-bold">Natif</span></div>
+                        <div class="flex justify-between items-center"><span class="text-2xl">Anglais</span><span class="text-[#C69A86] font-bold">Advanced</span></div>
+                        <div class="flex justify-between items-center"><span class="text-2xl">Espagnol</span><span class="text-[#C69A86] font-bold">Beginner</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-semibold mb-8">Soft Skills &amp; Passion</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="px-8 py-4 bg-[#6C6F8F] rounded-3xl">Pensée analytique</div>
+                        <div class="px-8 py-4 bg-[#6C6F8F] rounded-3xl">Travail d’équipe</div>
+                        <div class="px-8 py-4 bg-[#6C6F8F] rounded-3xl">Adaptabilité</div>
+                        <div class="px-8 py-4 bg-[#6C6F8F] rounded-3xl">Mindset humanitaire (Croissant-Rouge)</div>
+                        <div class="px-8 py-4 bg-[#6C6F8F] rounded-3xl">Créativité technique</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-28">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="heading-font text-6xl font-semibold mb-12 section-header">Projets phares</h2>
+            <div class="flex flex-wrap gap-4 mb-12" id="project-filters">
+                <button onclick="filterProjects('all')" class="project-filter active px-8 py-4 rounded-3xl font-semibold bg-[#C69A86] text-[#2E3445]">Tout</button>
+                <button onclick="filterProjects('ml')" class="project-filter px-8 py-4 rounded-3xl font-semibold">ML &amp; IA</button>
+                <button onclick="filterProjects('mlops')" class="project-filter px-8 py-4 rounded-3xl font-semibold">MLOps</button>
+                <button onclick="filterProjects('fullstack')" class="project-filter px-8 py-4 rounded-3xl font-semibold">Full-Stack</button>
+                <button onclick="filterProjects('mobile')" class="project-filter px-8 py-4 rounded-3xl font-semibold">Mobile</button>
+            </div>
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-28 bg-[#6C6F8F]">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="heading-font text-6xl font-semibold text-center mb-20 section-header">Formation</h2>
+            <div class="space-y-12">
+                <div class="bg-[#2E3445] rounded-3xl p-14 card-hover scroll-animate">
+                    <div class="flex flex-col md:flex-row justify-between gap-8">
+                        <div>
+                            <span class="text-[#C69A86] text-xl">2023 — 2025</span>
+                            <h3 class="text-3xl font-semibold mt-2">Ingénierie Logicielle</h3>
+                            <p class="text-xl muted-text">TEK-UP University</p>
+                        </div>
+                        <div class="flex-1 text-2xl soft-text">
+                            • Système de réservation complet MERN<br>
+                            • Application de gestion de consultation (Spring Boot + Angular)<br>
+                            • Modèle classification maladies de la pomme de terre (TensorFlow/Keras – 90% accuracy)<br>
+                            • Modèle de scoring crédit
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#2E3445] rounded-3xl p-14 card-hover scroll-animate">
+                    <div class="flex flex-col md:flex-row justify-between gap-8">
+                        <div>
+                            <span class="text-[#C69A86] text-xl">2022 — 2024</span>
+                            <h3 class="text-3xl font-semibold mt-2">Master Professionnel Data Science</h3>
+                            <p class="text-xl muted-text">Faculté des Sciences de Bizerte</p>
+                        </div>
+                        <div class="flex-1 text-2xl soft-text">
+                            • Détection fraude cartes bancaires (scikit-learn – 95% accuracy) déployé Django full-stack<br>
+                            • Tableau de bord interactif business intelligence (Flask + Angular)<br>
+                            • Screening CV automatique via NLP (NLTK + TF-IDF)<br>
+                            • Modèles Time Series (ARIMA, ARCH)
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#2E3445] rounded-3xl p-14 card-hover scroll-animate">
+                    <div class="flex flex-col md:flex-row justify-between gap-8">
+                        <div>
+                            <span class="text-[#C69A86] text-xl">2019 — 2022</span>
+                            <h3 class="text-3xl font-semibold mt-2">Bachelor Software Engineering &amp; Information Systems</h3>
+                            <p class="text-xl muted-text">Faculté des Sciences de Bizerte</p>
+                        </div>
+                        <div class="flex-1 text-2xl soft-text">
+                            • Système de gestion de bibliothèque (.NET Core + GitLab CI/CD)<br>
+                            • Dashboard Excel d’analyse des tendances marché
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-28 bg-[#6C6F8F]">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h2 class="heading-font text-6xl font-semibold mb-8">Prêt à créer quelque chose d’exceptionnel ?</h2>
+            <p class="text-3xl muted-text mb-16">MLOps • Full-Stack • IA • Data Science</p>
+            <div class="flex flex-col md:flex-row gap-8 justify-center">
+                <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ons.elyahmadi@fsb.ucar.tn" target="_blank"
+                   class="flex-1 bg-[#2E3445] hover:bg-[#C69A86] hover:text-[#2E3445] border-2 border-[#C69A86] rounded-3xl p-12 text-left card-hover">
+                    <i class="fas fa-envelope text-6xl mb-8"></i>
+                    <p class="text-3xl font-semibold">M’envoyer un mail via Gmail</p>
+                    <p class="text-[#C69A86] text-xl">ons.elyahmadi@fsb.ucar.tn</p>
+                </a>
+                <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank"
+                   class="flex-1 bg-[#2E3445] hover:bg-[#C69A86] hover:text-[#2E3445] border-2 border-[#C69A86] rounded-3xl p-12 text-left card-hover">
+                    <i class="fab fa-linkedin text-6xl mb-8"></i>
+                    <p class="text-3xl font-semibold">Me connecter sur LinkedIn</p>
+                    <p class="text-[#C69A86] text-xl">@ons-yahmadi</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2E3445] py-12 text-center text-[#A7A2B6]">
+        © 2026 Ons El Yahmadi • Design moderne, clair &amp; professionnel • Tous les projets sont réels et déployés
+    </footer>
+
+    <script>
+        function filterProjects(cat) {
+            document.querySelectorAll('#project-filters button').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
+            });
         }
-        update() { this.x += this.speedX; this.y += this.speedY;
-          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+        const projectsData = [
+            { title: "Potato Disease Classification", desc: "Modèle deep learning TensorFlow/Keras — 90% précision", tech: "TensorFlow • Keras • Vision", category: "ml", icon: "🧬" },
+            { title: "Credit Card Fraud Detection", desc: "Système 95% accuracy déployé full-stack Django", tech: "scikit-learn • Django • Angular", category: "ml", icon: "💳" },
+            { title: "EduZEN MLOps Pipeline", desc: "CI/CD complet pour LLM & ML avec Jenkins + Docker + NestJS", tech: "Jenkins • Docker • Google Colab", category: "mlops", icon: "🚀" },
+            { title: "Safe Life – App Mobile", desc: "Application Ionic de localisation d’équipements d’urgence", tech: "Ionic • MongoDB • Swagger", category: "mobile", icon: "📱" },
+            { title: "Gestion Fiscale Municipale", desc: "Full-stack Spring Boot + Angular + Google Maps + PayPal", tech: "Spring Boot • Angular • PostgreSQL", category: "fullstack", icon: "🏛️" },
+            { title: "Réservation MERN", desc: "Plateforme de réservation complète avec auth & admin panel", tech: "MERN • Next.js • Real-time", category: "fullstack", icon: "📅" }
+        ];
+
+        function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            grid.innerHTML = '';
+            projectsData.forEach((p, i) => {
+                const cardHTML = `
+                    <div class="project-card bg-[#2E3445] rounded-3xl overflow-hidden card-hover" data-category="${p.category}" style="animation-delay: ${i*80}ms">
+                        <div class="h-2 bg-gradient-to-r from-[#C69A86] to-[#E8C7B5]"></div>
+                        <div class="p-8">
+                            <div class="text-7xl mb-8">${p.icon}</div>
+                            <h3 class="text-3xl font-semibold mb-4">${p.title}</h3>
+                            <p class="muted-text text-xl mb-8">${p.desc}</p>
+                            <div class="flex flex-wrap gap-3">
+                                ${p.tech.split('•').map(t => `<span class="text-sm bg-[#6C6F8F] text-[#C69A86] px-5 py-2 rounded-3xl">${t.trim()}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <div class="text-[#F3E6E0] text-2xl font-semibold flex items-center gap-3">Voir le cas d’étude <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </div>`;
+                grid.innerHTML += cardHTML;
+            });
         }
-        draw() {
-          ctx.fillStyle = '#14b8a6';
-          ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
-        }
-      }
-      function createParticles(n) { particles = []; for (let i = 0; i < n; i++) particles.push(new Particle()); }
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach((p, i) => {
-          p.update(); p.draw();
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[j].x - p.x;
-            const dy = particles[j].y - p.y;
-            const distance = Math.sqrt(dx*dx + dy*dy);
-            if (distance < 130) {
-              ctx.strokeStyle = `rgba(20, 184, 166, ${1 - distance/130})`;
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
+
+        function initParticles() {
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            let particles = [];
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speedX = Math.random() * 1.8 - 0.9;
+                    this.speedY = Math.random() * 1.8 - 0.9;
+                }
+                update() {
+                    this.x += this.speedX; this.y += this.speedY;
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                }
+                draw() {
+                    ctx.fillStyle = '#C69A86';
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                }
             }
-          }
-        });
-        requestAnimationFrame(animate);
-      }
-      createParticles(140);
-      animate();
-      window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; createParticles(140); });
-    }
+            function createParticles(n) {
+                particles = [];
+                for (let i = 0; i < n; i++) particles.push(new Particle());
+            }
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach((p, i) => {
+                    p.update(); p.draw();
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[j].x - p.x;
+                        const dy = particles[j].y - p.y;
+                        const distance = Math.sqrt(dx*dx + dy*dy);
+                        if (distance < 130) {
+                            ctx.strokeStyle = `rgba(198, 154, 134, ${1 - distance/130})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+            createParticles(140);
+            animate();
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                createParticles(140);
+            });
+        }
 
-    function toggleMobileMenu() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    }
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
 
-    function downloadCV() {
-      alert("✅ CV téléchargé ! (Remplace cet alert par ton vrai lien PDF en production)");
-    }
+        function downloadCV() {
+            alert("✅ CV téléchargé ! (Remplace cet alert par ton vrai lien PDF en production)");
+        }
 
-    window.onload = () => {
-      renderProjects();
-      initParticles();
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.progress-bar').forEach(bar => bar.style.width = bar.style.width || '0%');
-            entry.target.classList.add('scroll-animate');
-          }
-        });
-      }, { threshold: 0.3 });
-
-      document.querySelectorAll('#skills, #experience, #education').forEach(s => observer.observe(s));
-      document.getElementById('mobile-btn').addEventListener('click', toggleMobileMenu);
-    };
-  </script>
+        window.onload = () => {
+            renderProjects();
+            initParticles();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.progress-bar').forEach(bar => bar.style.width = bar.style.width || '0%');
+                        entry.target.classList.add('scroll-animate');
+                    }
+                });
+            }, { threshold: 0.3 });
+            document.querySelectorAll('#skills, #experience, #education').forEach(s => observer.observe(s));
+            document.getElementById('mobile-btn').addEventListener('click', toggleMobileMenu);
+        };
+    </script>
 </body>
 </html>
