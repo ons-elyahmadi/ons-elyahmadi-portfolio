@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,21 +52,20 @@
     .nav-link {
       position: relative;
       color: #e8eefc;
-      transition: 0.35s ease;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .nav-link::after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -8px;
+      bottom: -6px;
       width: 0;
-      height: 2px;
-      border-radius: 999px;
+      height: 2.5px;
       background: linear-gradient(90deg, var(--violet), var(--blue));
-      transition: width 0.35s ease;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .nav-link:hover { color: #fff; }
-    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover, .nav-link.active { color: white; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
     .hero-orb {
       position: absolute;
       border-radius: 9999px;
@@ -75,19 +74,16 @@
       pointer-events: none;
       animation: floatOrb 12s ease-in-out infinite;
     }
-    .orb-1 { width: 280px; height: 280px; background: rgba(139, 92, 246, 0.35); top: -70px; right: -70px; }
-    .orb-2 { width: 260px; height: 260px; background: rgba(59, 130, 246, 0.28); bottom: 20px; left: -70px; animation-delay: -4s; }
-    .orb-3 { width: 180px; height: 180px; background: rgba(255, 255, 255, 0.12); top: 20%; left: 38%; animation-delay: -7s; }
     @keyframes floatOrb {
       0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-      50% { transform: translateY(22px) translateX(-10px) scale(1.08); }
+      50% { transform: translateY(28px) translateX(-14px) scale(1.1); }
     }
     #hero-canvas {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      opacity: 0.22;
+      opacity: 0.25;
       pointer-events: none;
       z-index: 0;
     }
@@ -114,12 +110,12 @@
       box-shadow: var(--shadow);
     }
     .card-hover {
-      transition: transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s ease, border-color 0.45s ease;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.45s ease, border-color 0.45s ease;
     }
     .card-hover:hover {
-      transform: translateY(-10px) scale(1.015);
+      transform: translateY(-12px) scale(1.02);
       border-color: rgba(167, 139, 250, 0.40);
-      box-shadow: 0 28px 80px rgba(58, 83, 161, 0.35);
+      box-shadow: 0 32px 90px rgba(58, 83, 161, 0.35);
     }
     .shine {
       position: relative;
@@ -129,29 +125,26 @@
       content: '';
       position: absolute;
       inset: 0;
-      transform: translateX(-120%) skewX(-18deg);
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-      transition: transform 0.8s ease;
+      transform: translateX(-130%) skewX(-15deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: transform 0.9s ease;
     }
-    .shine:hover::before { transform: translateX(120%) skewX(-18deg); }
+    .shine:hover::before { transform: translateX(130%) skewX(-15deg); }
     .glow-text {
-      text-shadow: 0 0 22px rgba(139, 92, 246, 0.38), 0 0 36px rgba(59, 130, 246, 0.22);
+      text-shadow: 0 0 25px rgba(139, 92, 246, 0.45), 0 0 45px rgba(59, 130, 246, 0.3);
     }
     .typing {
       overflow: hidden;
       white-space: nowrap;
       border-right: 3px solid rgba(255,255,255,0.9);
-      animation: typing 3.8s steps(30, end) forwards, blink 0.8s step-end infinite;
+      animation: typing 3.5s steps(30, end) forwards, blink 0.7s step-end infinite;
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
     @keyframes blink { 50% { border-color: transparent; } }
     .scroll-animate {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.85s ease, transform 0.85s ease;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .scroll-animate.is-visible {
       opacity: 1;
@@ -159,7 +152,7 @@
     }
     .skill-bar {
       height: 10px;
-      border-radius: 999px;
+      border-radius: 9999px;
       background: rgba(255,255,255,0.08);
       overflow: hidden;
     }
@@ -167,7 +160,9 @@
       height: 100%;
       border-radius: inherit;
       background: linear-gradient(90deg, var(--violet), var(--blue));
-      box-shadow: 0 0 20px rgba(139, 92, 246, 0.28);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+      width: 0%;
+      transition: width 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .project-filter {
       background: rgba(255,255,255,0.05);
@@ -186,6 +181,11 @@
       position: relative;
       overflow: hidden;
       min-height: 340px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .project-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 32px 90px rgba(139, 92, 246, 0.25);
     }
     .project-card .overlay {
       position: absolute;
@@ -218,17 +218,17 @@
       animation: floatOrb 5.5s ease-in-out infinite;
     }
     ::selection {
-      background: rgba(139, 92, 246, 0.35);
+      background: rgba(139, 92, 246, 0.4);
       color: white;
     }
   </style>
 </head>
 <body class="overflow-x-hidden">
   <!-- NAVBAR -->
-  <nav class="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-950/55 backdrop-blur-2xl">
+  <nav class="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-2xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
       <div class="flex items-center gap-3">
-        <div class="flex h-11 w-11 items-center justify-center rounded-2xl accent-gradient text-white font-bold shadow-lg shadow-violet-500/30">O</div>
+        <div class="flex h-11 w-11 items-center justify-center rounded-2xl accent-gradient text-white font-bold shadow-lg shadow-violet-500/40">O</div>
         <div>
           <h1 class="heading-font text-2xl md:text-3xl font-semibold tracking-tight text-white">Ons El Yahmadi</h1>
           <p class="text-xs text-slate-300">MLOps &amp; Full-Stack Engineer</p>
@@ -243,7 +243,7 @@
         <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden rounded-2xl px-5 py-3 text-sm font-semibold text-white accent-gradient shadow-lg shadow-violet-500/25 md:inline-flex">Get in touch</a>
+        <a href="#contact" class="hidden rounded-2xl px-6 py-3 text-sm font-semibold text-white accent-gradient shadow-lg shadow-violet-500/30 md:inline-flex">Get in touch</a>
         <button id="mobile-btn" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl glass text-white md:hidden">
           <i class="fas fa-bars text-lg"></i>
         </button>
@@ -264,9 +264,9 @@
   <!-- HERO -->
   <section id="hero" class="relative min-h-screen overflow-hidden pt-24">
     <canvas id="hero-canvas"></canvas>
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="hero-orb orb-3"></div>
+    <div class="hero-orb" style="width:280px;height:280px;background:rgba(139,92,246,0.35);top:-70px;right:-70px;"></div>
+    <div class="hero-orb" style="width:260px;height:260px;background:rgba(59,130,246,0.28);bottom:20px;left:-70px;animation-delay:-4s;"></div>
+    <div class="hero-orb" style="width:180px;height:180px;background:rgba(255,255,255,0.12);top:22%;left:38%;animation-delay:-7s;"></div>
     <div class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-12 md:px-8">
       <div class="md:col-span-7">
         <div class="glass mb-8 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm text-slate-100">
@@ -286,8 +286,8 @@
           I build CI/CD pipelines, develop modern web and mobile applications, and deploy AI models from notebooks to production.
         </p>
         <div class="mt-10 flex flex-wrap gap-4">
-          <a href="#projects" class="shine inline-flex items-center gap-3 rounded-2xl px-7 py-4 text-base font-semibold text-white accent-gradient shadow-lg shadow-violet-500/25 transition-transform hover:scale-[1.02] md:px-9 md:py-5 md:text-lg">
-            View my projects <i class="fas fa-arrow-right"></i>
+          <a href="#projects" class="shine inline-flex items-center gap-3 rounded-2xl px-7 py-4 text-base font-semibold text-white accent-gradient shadow-lg shadow-violet-500/30 transition-transform hover:scale-105 md:px-9 md:py-5 md:text-lg">
+            View my projects <i class="fas fa-arrow-right ml-2"></i>
           </a>
           <a href="https://www.linkedin.com/in/ons-yahmadi/" target="_blank" class="inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10 md:px-9 md:py-5 md:text-lg">
             <i class="fab fa-linkedin text-xl"></i> LinkedIn
@@ -339,22 +339,22 @@
           <p class="mt-6 text-base leading-7 text-slate-400 md:text-xl">Clear execution • Focus on results • Solutions that work in real environments.</p>
         </div>
         <div class="grid gap-5 sm:grid-cols-2">
-          <div class="card card-hover rounded-3xl p-7">
+          <div class="card card-hover rounded-3xl p-7 scroll-animate">
             <i class="fas fa-rocket text-5xl text-violet-300"></i>
             <h4 class="mt-5 text-xl font-semibold text-white">MLOps &amp; Production</h4>
             <p class="mt-2 text-sm text-slate-300">CI/CD • Docker • Jenkins • LLM Monitoring</p>
           </div>
-          <div class="card card-hover rounded-3xl p-7">
+          <div class="card card-hover rounded-3xl p-7 scroll-animate">
             <i class="fas fa-brain text-5xl text-blue-300"></i>
             <h4 class="mt-5 text-xl font-semibold text-white">Machine Learning</h4>
             <p class="mt-2 text-sm text-slate-300">Computer Vision • NLP • Time Series • Fraud Detection</p>
           </div>
-          <div class="card card-hover rounded-3xl p-7">
+          <div class="card card-hover rounded-3xl p-7 scroll-animate">
             <i class="fas fa-laptop-code text-5xl text-violet-200"></i>
             <h4 class="mt-5 text-xl font-semibold text-white">Modern Full-Stack</h4>
             <p class="mt-2 text-sm text-slate-300">Next.js • NestJS • MERN • Ionic • Spring Boot</p>
           </div>
-          <div class="card card-hover rounded-3xl p-7">
+          <div class="card card-hover rounded-3xl p-7 scroll-animate">
             <i class="fas fa-globe text-5xl text-blue-200"></i>
             <h4 class="mt-5 text-xl font-semibold text-white">Data Engineering</h4>
             <p class="mt-2 text-sm text-slate-300">ETL • Power BI • Tableau • SSIS • Azure</p>
@@ -431,30 +431,30 @@
     <div class="mx-auto max-w-7xl px-6 md:px-8">
       <h2 class="heading-font section-title mx-auto mb-20 block max-w-fit text-4xl font-bold text-white md:text-6xl">Skills &amp; Tools</h2>
       <div class="grid gap-6 lg:grid-cols-3">
-        <div class="card card-hover rounded-3xl p-7 md:p-9">
+        <div class="card card-hover rounded-3xl p-7 md:p-9 scroll-animate">
           <h4 class="mb-7 flex items-center gap-3 text-xl font-semibold text-white">
             <i class="fas fa-code text-violet-300"></i> Programming
           </h4>
           <div class="space-y-7">
             <div>
               <div class="mb-2 flex justify-between text-sm md:text-base"><span>Python</span><span class="text-blue-200">95%</span></div>
-              <div class="skill-bar"><div class="skill-fill w-[95%]"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
             </div>
             <div>
               <div class="mb-2 flex justify-between text-sm md:text-base"><span>Java / Spring Boot</span><span class="text-blue-200">90%</span></div>
-              <div class="skill-bar"><div class="skill-fill w-[90%]"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
             </div>
             <div>
               <div class="mb-2 flex justify-between text-sm md:text-base"><span>JavaScript / TypeScript</span><span class="text-blue-200">88%</span></div>
-              <div class="skill-bar"><div class="skill-fill w-[88%]"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
             </div>
             <div>
               <div class="mb-2 flex justify-between text-sm md:text-base"><span>SQL • R • C#</span><span class="text-blue-200">87%</span></div>
-              <div class="skill-bar"><div class="skill-fill w-[87%]"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
             </div>
           </div>
         </div>
-        <div class="card card-hover rounded-3xl p-7 md:p-9">
+        <div class="card card-hover rounded-3xl p-7 md:p-9 scroll-animate">
           <h4 class="mb-7 flex items-center gap-3 text-xl font-semibold text-white">
             <i class="fas fa-server text-blue-300"></i> MLOps &amp; DevOps
           </h4>
@@ -467,7 +467,7 @@
             <span class="rounded-full bg-white/6 px-4 py-3 text-sm text-slate-100 border border-white/10">SSIS • Linux • Azure</span>
           </div>
         </div>
-        <div class="card card-hover rounded-3xl p-7 md:p-9">
+        <div class="card card-hover rounded-3xl p-7 md:p-9 scroll-animate">
           <h4 class="mb-7 flex items-center gap-3 text-xl font-semibold text-white">
             <i class="fas fa-cubes text-violet-300"></i> Frameworks &amp; AI
           </h4>
@@ -483,7 +483,7 @@
         </div>
       </div>
       <div class="mt-16 grid gap-8 md:grid-cols-2">
-        <div class="card rounded-3xl p-7 md:p-9">
+        <div class="card rounded-3xl p-7 md:p-9 scroll-animate">
           <h4 class="mb-8 text-2xl font-semibold text-white">Languages</h4>
           <div class="space-y-5 text-base md:text-xl">
             <div class="flex items-center justify-between"><span>French</span><span class="text-blue-200 font-semibold">Fluent</span></div>
@@ -492,7 +492,7 @@
             <div class="flex items-center justify-between"><span>Spanish</span><span class="text-violet-200 font-semibold">Beginner</span></div>
           </div>
         </div>
-        <div class="card rounded-3xl p-7 md:p-9">
+        <div class="card rounded-3xl p-7 md:p-9 scroll-animate">
           <h4 class="mb-8 text-2xl font-semibold text-white">Soft Skills</h4>
           <div class="flex flex-wrap gap-3">
             <span class="rounded-full bg-white/6 px-4 py-3 text-sm border border-white/10">Analytical Thinking</span>
@@ -602,6 +602,7 @@
     function toggleMobileMenu() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     }
+
     function filterProjects(event, cat) {
       document.querySelectorAll('#project-filters button').forEach(btn => btn.classList.remove('active'));
       event.currentTarget.classList.add('active');
@@ -609,6 +610,7 @@
         card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
       });
     }
+
     const projectsData = [
       { title: "Potato Disease Classification", desc: "Deep learning model with TensorFlow/Keras — 90% accuracy", tech: "TensorFlow • Keras • Computer Vision", category: "ml", icon: "🧬" },
       { title: "Credit Card Fraud Detection", desc: "95% accuracy system deployed as full-stack Django application", tech: "scikit-learn • Django • Angular", category: "ml", icon: "💳" },
@@ -617,6 +619,7 @@
       { title: "Municipal Tax Management", desc: "Full-stack application with Spring Boot + Angular + Google Maps + PayPal", tech: "Spring Boot • Angular • PostgreSQL", category: "fullstack", icon: "🏛️" },
       { title: "MERN Reservation Platform", desc: "Complete booking platform with authentication & admin panel", tech: "MERN • Next.js • Real-time", category: "fullstack", icon: "📅" }
     ];
+
     function renderProjects() {
       const grid = document.getElementById('projects-grid');
       grid.innerHTML = '';
@@ -639,6 +642,7 @@
           </article>`;
       });
     }
+
     function initParticles() {
       const canvas = document.getElementById('hero-canvas');
       const ctx = canvas.getContext('2d');
@@ -648,9 +652,7 @@
         canvas.height = window.innerHeight;
       }
       class Particle {
-        constructor() {
-          this.reset();
-        }
+        constructor() { this.reset(); }
         reset() {
           this.x = Math.random() * canvas.width;
           this.y = Math.random() * canvas.height;
@@ -703,6 +705,7 @@
         createParticles(120);
       });
     }
+
     function revealOnScroll() {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -710,13 +713,46 @@
         });
       }, { threshold: 0.15 });
       document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
-      document.querySelectorAll('#skills .card, #projects .project-card, #contact a').forEach(el => el.classList.add('scroll-animate'));
-      document.querySelectorAll('#skills .card, #projects .project-card, #contact a').forEach(el => observer.observe(el));
     }
+
+    function animateSkillBars() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const fills = entry.target.querySelectorAll('.skill-fill');
+            fills.forEach(bar => {
+              const width = bar.getAttribute('data-width');
+              bar.style.width = width + '%';
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('#skills .card').forEach(card => observer.observe(card));
+    }
+
+    function navScrollSpy() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (scrollY >= sectionTop - 180) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+      });
+    }
+
     window.onload = () => {
       renderProjects();
       initParticles();
       revealOnScroll();
+      animateSkillBars();
+      navScrollSpy();
       document.getElementById('mobile-btn').addEventListener('click', toggleMobileMenu);
     };
   </script>
